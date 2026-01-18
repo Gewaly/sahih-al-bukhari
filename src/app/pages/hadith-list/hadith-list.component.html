@@ -1,0 +1,39 @@
+<div class="container py-5">
+  <div class="header-section mb-4">
+    <div class="d-flex align-items-center justify-content-between position-relative">
+      <button class="btn-back" routerLink="/home">
+        <i class="bi bi-arrow-right"></i>
+        العودة للرئيسية
+      </button>
+
+      <h1 class="page-title position-absolute start-50 translate-middle-x m-0">
+        {{ sectionTitle }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-12" *ngFor="let h of filteredHadiths; let i = index">
+      <div class="hadith-card">
+        <div class="hadith-number">
+          <span>{{ h.hadithnumber | arabicNumber }}</span>
+        </div>
+        
+        <div class="hadith-content">
+          <p class="hadith-text">
+            {{ h.text }}
+          </p>
+          
+          <div class="hadith-footer" *ngIf="h.reference">
+            <span class="reference-badge">
+              كتاب: {{ h.reference.book | arabicNumber }}
+            </span>
+            <span class="reference-badge">
+              حديث: {{ h.reference.hadith | arabicNumber }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
