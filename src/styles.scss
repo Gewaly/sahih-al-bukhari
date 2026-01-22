@@ -1,0 +1,68 @@
+// Global Styles
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5.6rem;
+}
+
+.page-content {
+    flex: 1 0 auto;
+}
+
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root {
+    --bs-primary: #1d6867;
+    --bs-primary-rgb: 29, 104, 103;
+    --bs-link-color: #1d6867;
+    --bs-link-hover-color: #15504f;
+}
+
+::-webkit-scrollbar {
+    height: 2px;
+    width: 10px;
+    background-color: #f7f7f7;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3rem;
+    background-color: #15504f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #33706f;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+
+    &:hover {
+        background-color: #15504f !important;
+        border-color: #15504f !important;
+    }
+}

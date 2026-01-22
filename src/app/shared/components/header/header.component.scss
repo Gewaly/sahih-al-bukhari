@@ -1,9 +1,11 @@
 .header {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #15504f;
   backdrop-filter: blur(10px);
   padding: 0.75rem 0;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -26,7 +28,7 @@
   &:focus-within {
     background-color: #ffffff !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-    border-color: var(--bs-primary, #055857) !important;
+    border-color: var(--bs-primary) !important;
   }
 }
 

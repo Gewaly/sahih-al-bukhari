@@ -12,8 +12,10 @@
     </div>
   </div>
 
-  <div class="row g-4">
-    <div class="col-12" *ngFor="let h of filteredHadiths; let i = index">
+  <app-loader *ngIf="isLoading"></app-loader>
+
+  <div class="row g-4" *ngIf="!isLoading">
+    <div class="col-12" *ngFor="let h of paginatedHadiths; let i = index">
       <div class="hadith-card">
         <div class="hadith-number">
           <span>{{ h.hadithnumber | arabicNumber }}</span>
@@ -35,5 +37,28 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination-container d-flex justify-content-center align-items-center mt-5 gap-3" *ngIf="!isLoading && totalPages > 1">
+    <button 
+      class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" 
+      style="width: 40px; height: 40px;"
+      [disabled]="currentPage === 1"
+      (click)="changePage(currentPage - 1)">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <span class="fw-bold text-muted">
+      صفحة {{ currentPage }} من {{ totalPages }}
+    </span>
+
+    <button 
+      class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" 
+      style="width: 40px; height: 40px;"
+      [disabled]="currentPage === totalPages"
+      (click)="changePage(currentPage + 1)">
+      <i class="bi bi-chevron-left"></i>
+    </button>
   </div>
 </div>
